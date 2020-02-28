@@ -1,5 +1,6 @@
 +++
 title = "Введение"
+description = "Ответы на базовые вопросы о сервисе Cronbox"
 weight = 1
 sort_by = "weight"
 +++
