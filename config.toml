@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "https://docs.cronbox.ru"
 
+title = "Cronbox"
+description = "Документация к Cronbox"
+
 default_language = "ru"
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -22,3 +25,10 @@ panel = "https://cp.cronbox.ru"
 docs = "https://docs.cronbox.ru"
 
 documentation_for = "Cronbox"
+
+favicon_type = "image/x-icon"
+
+open_graph_url = "https://docs.cronbox.ru"
+open_graph_type = "article"
+open_graph_title = "Cronbox"
+open_graph_image = ""
