@@ -19,6 +19,8 @@ build_search_index = true
 theme="tinydocs"
 
 [extra]
+keywords = "Документация, Cronbox"
+
 # Put all your custom variables here
 blog = "https://blog.cronbox.ru"
 panel = "https://cp.cronbox.ru"
