@@ -1,7 +1,7 @@
 +++
 title = "Как пинговать"
 description = "Как пропинговать монитор разными способами"
+keywords = "ping, мониторинг, мониторинг для разработчиков, документация"
 weight = 3
 sort_by = "weight"
-insert_anchor_links = "right"
 +++
