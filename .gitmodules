@@ -1,0 +1,3 @@
+[submodule "themes/tinydocs"]
+	path = themes/tinydocs
+	url = git@gitlab.com:tiny-ops/tinydocs-zola-theme.git
