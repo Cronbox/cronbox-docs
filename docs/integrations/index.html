@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+Интеграции | Cronbox
+</title>
+
+    <link rel="canonical" href="https:&#x2F;&#x2F;docs.cronbox.ru">
+
+    
+<meta name="Description" content="Описание способов интеграции для уведомлений">
+
+
+    
+
+<meta name="keywords" content="мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron">
+
+
+
+    
+    <meta property="og:title" content="Cronbox" />
+    
+
+    
+<meta property="og:description" content="Описание способов интеграции для уведомлений"/>
+
+
+    
+<meta property="og:url" content="/integrations&#x2F;" />
+
+
+    
+    <meta property="og:type" content="article" />
+    
+
+    
+
+    <link rel="icon" type="image&#x2F;x-icon" href="/favicon.ico">
+
+    
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="https://docs.cronbox.ru/style.css">
+    
+
+    
+    
+</head>
+
+<body>
+    <div class="menu">
+        
+        <div class="menu__header">
+            <div class="menu__header__kind text-color-secondary">
+                ДОКУМЕНТАЦИЯ
+            </div>
+            <h2>Cronbox</h2>
+
+            
+            <div style="margin-top: 20px; margin-bottom: 10px">
+                <a href="https:&#x2F;&#x2F;cronbox.ru" target="_blank" title="Перейти на сайт"
+                   class="menu__header__site-link">Сайт</a>
+            </div>
+            
+        </div>
+
+        
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;intro&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>1.</strong>
+                                Введение
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;getting-started&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>2.</strong>
+                                С чего начать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>3.</strong>
+                                Как пинговать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>4.</strong>
+                                Состояния Монитора и уведомления
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;integrations&#x2F;"
+                               class="active"
+                               
+                            >
+                                <strong>5.</strong>
+                                Интеграции
+                            </a>
+                            
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+        
+        
+    </div>
+
+    <div class="page">
+        <div class="page__header">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="page__content">
+            <div class="book-content">
+                
+    <h1>Интеграции</h1>
+    <p>На данный момент Cronbox поддерживает два канала уведомлений: E-mail и Telegram.</p>
+<h2 id="e-mail">E-mail</h2>
+<p>Чтобы уведомления приходили на почту, при создании или редактировании монитора необходимо
+отметить E-mail в качестве канала уведомления:</p>
+<p><img src="/images/integration/email.png" alt="alt text" title="Канал уведомлений по E-mail" /></p>
+<h2 id="telegram">Telegram</h2>
+<p>Чтобы Cronbox отправлял уведомления через Telegram, 
+необходимо <a href="https://cp.cronbox.ru/profile">зайти в свой профиль</a> и подключиться к боту.</p>
+<p><strong>Шаги для подключения:</strong></p>
+<ol>
+<li>
+<p>Написать что-нибудь боту (<code>@Cronbox_Bot</code>)</p>
+</li>
+<li>
+<p>Ввести имя пользователя в Telegram в форме:</p>
+</li>
+</ol>
+<p><img src="/images/integration/telegram_form.png" alt="alt text" title="Форма интеграции с Telegram" /></p>
+<ol start="3">
+<li>Нажать &quot;Подключить&quot;</li>
+</ol>
+<h2 id="kak-otkliuchit-vse-uvedomleniia">Как отключить все уведомления</h2>
+<p>Массовое отключение уведомлений пока не предусмотрено, поэтому отключение производится отдельно для каждого из мониторов. </p>
+<ol>
+<li>
+<p>Заходим на страницу монитора</p>
+</li>
+<li>
+<p>Нажимаем <code>Редактировать</code></p>
+</li>
+<li>
+<p>В разделе Уведомления снимаем выбор с пунктов <code>E-mail</code> и <code>Telegram</code>.</p>
+</li>
+<li>
+<p>Сохраняем изменения.</p>
+</li>
+</ol>
+
+
+            </div>
+        </div>
+
+        <div class="prev-link">
+            
+    
+    
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+                
+                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;"><</a>
+                
+                
+                
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+
+        </div>
+
+        <div class="next-link">
+            
+    
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+                
+            
+        
+    
+
+        </div>
+    </div>
+</body>
+</html>

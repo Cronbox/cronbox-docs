@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+Состояния Монитора и уведомления | Cronbox
+</title>
+
+    <link rel="canonical" href="https:&#x2F;&#x2F;docs.cronbox.ru">
+
+    
+<meta name="Description" content="Какие состояния бывают у Монитора и когда мы рассылаем уведомления">
+
+
+    
+
+<meta name="keywords" content="мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron">
+
+
+
+    
+    <meta property="og:title" content="Cronbox" />
+    
+
+    
+<meta property="og:description" content="Какие состояния бывают у Монитора и когда мы рассылаем уведомления"/>
+
+
+    
+<meta property="og:url" content="/monitor-states-and-alerts&#x2F;" />
+
+
+    
+    <meta property="og:type" content="article" />
+    
+
+    
+
+    <link rel="icon" type="image&#x2F;x-icon" href="/favicon.ico">
+
+    
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="https://docs.cronbox.ru/style.css">
+    
+
+    
+    
+</head>
+
+<body>
+    <div class="menu">
+        
+        <div class="menu__header">
+            <div class="menu__header__kind text-color-secondary">
+                ДОКУМЕНТАЦИЯ
+            </div>
+            <h2>Cronbox</h2>
+
+            
+            <div style="margin-top: 20px; margin-bottom: 10px">
+                <a href="https:&#x2F;&#x2F;cronbox.ru" target="_blank" title="Перейти на сайт"
+                   class="menu__header__site-link">Сайт</a>
+            </div>
+            
+        </div>
+
+        
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;intro&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>1.</strong>
+                                Введение
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;getting-started&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>2.</strong>
+                                С чего начать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>3.</strong>
+                                Как пинговать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;"
+                               class="active"
+                               
+                            >
+                                <strong>4.</strong>
+                                Состояния Монитора и уведомления
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;integrations&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>5.</strong>
+                                Интеграции
+                            </a>
+                            
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+        
+        
+    </div>
+
+    <div class="page">
+        <div class="page__header">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="page__content">
+            <div class="book-content">
+                
+    <h1>Состояния Монитора и уведомления</h1>
+    <p>Монитор может быть в трех состояниях:</p>
+<ol>
+<li>
+<p><code>OK</code> - все хорошо, задача выполнилась по расписанию.</p>
+</li>
+<li>
+<p><code>ПРОБЛЕМА</code> - задача не запустилась в указанное время или работала дольше, чем ожидалось.</p>
+</li>
+<li>
+<p><code>НА ПАУЗЕ</code> - работа монитора приостановлена, для его активации требуется отправить HTTP-запрос на уникальный URL-адрес.</p>
+</li>
+</ol>
+<h3 id="kogda-cronbox-rassylaet-uvedomleniia">Когда Cronbox рассылает уведомления?</h3>
+<ol>
+<li>
+<p>После того как монитор получил первый отклик. Тогда он переключается из состояния <code>НА ПАУЗЕ</code>
+в состояние <code>ОК</code>.</p>
+</li>
+<li>
+<p>Если монитор перешел в состояние <code>ПРОБЛЕМА</code>. Это происходит в двух случаях:</p>
+<ul>
+<li>ping-запрос не пришел согласно расписанию задачи;</li>
+<li>ping-запрос пришел позже, чем ожидалось.</li>
+</ul>
+</li>
+<li>
+<p>Когда монитор в состоянии <code>ПРОБЛЕМА</code> получает успешный ping-запрос, то его статус меняется на <code>ОК</code>. </p>
+</li>
+</ol>
+
+
+            </div>
+        </div>
+
+        <div class="prev-link">
+            
+    
+    
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+                
+                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;"><</a>
+                
+                
+                
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+
+        </div>
+
+        <div class="next-link">
+            
+    
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+                
+            
+        
+            
+            
+                <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;integrations&#x2F;">></a>
+                
+                
+            
+            
+        
+    
+
+        </div>
+    </div>
+</body>
+</html>

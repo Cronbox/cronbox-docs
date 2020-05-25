@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+С чего начать | Cronbox
+</title>
+
+    <link rel="canonical" href="https:&#x2F;&#x2F;docs.cronbox.ru">
+
+    
+<meta name="Description" content="Как быстро включить мониторинг для задач">
+
+
+    
+
+<meta name="keywords" content="мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron">
+
+
+
+    
+    <meta property="og:title" content="Cronbox" />
+    
+
+    
+<meta property="og:description" content="Как быстро включить мониторинг для задач"/>
+
+
+    
+<meta property="og:url" content="/getting-started&#x2F;" />
+
+
+    
+    <meta property="og:type" content="article" />
+    
+
+    
+
+    <link rel="icon" type="image&#x2F;x-icon" href="/favicon.ico">
+
+    
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="https://docs.cronbox.ru/style.css">
+    
+
+    
+    
+</head>
+
+<body>
+    <div class="menu">
+        
+        <div class="menu__header">
+            <div class="menu__header__kind text-color-secondary">
+                ДОКУМЕНТАЦИЯ
+            </div>
+            <h2>Cronbox</h2>
+
+            
+            <div style="margin-top: 20px; margin-bottom: 10px">
+                <a href="https:&#x2F;&#x2F;cronbox.ru" target="_blank" title="Перейти на сайт"
+                   class="menu__header__site-link">Сайт</a>
+            </div>
+            
+        </div>
+
+        
+        <nav role="navigation">
+            <ul>
+                
+                    
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;intro&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>1.</strong>
+                                Введение
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;getting-started&#x2F;"
+                               class="active"
+                               
+                            >
+                                <strong>2.</strong>
+                                С чего начать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>3.</strong>
+                                Как пинговать
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>4.</strong>
+                                Состояния Монитора и уведомления
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li>
+                            
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;integrations&#x2F;"
+                               
+                               class="font-weight-bold"
+                            >
+                                <strong>5.</strong>
+                                Интеграции
+                            </a>
+                            
+                        </li>
+                    
+                
+            </ul>
+        </nav>
+        
+        
+    </div>
+
+    <div class="page">
+        <div class="page__header">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="page__content">
+            <div class="book-content">
+                
+    <h1>С чего начать</h1>
+    <p>Чтобы мониторить серверную задачу необходимо создать монитор.</p>
+<ol>
+<li>
+<p>В панели управления нажмите «<a href="https://cp.cronbox.ru/monitor/add">Создать</a>»:</p>
+<p><img src="/images/getting-started/step-1.png" alt="alt text" title="Добавляем новый монитор" /></p>
+<p>Откроется форма создания нового монитора:</p>
+<p><img src="/images/getting-started/step-2.png" alt="alt text" title="Форма нового монитора" /></p>
+</li>
+<li>
+<p>Укажите название монитора — например, <em>&quot;Резервное копирование сайта&quot;</em>. Затем добавьте расписание,
+аналогичное расписанию, по которому запускается задача. На скриншоте это «23:30, каждый день».
+То есть Cronbox будет ожидать отклика от вашей задачи каждый день в пятиминутном диапазоне: с <code>23:30:00</code> до <code>23:35:59</code>.</p>
+</li>
+<li>
+<p>Если ваш часовой пояс отличается от московского времени, то выберите, из выпадающего списка, 
+тот пояс, который соответствует вашему.</p>
+<p><img src="/images/getting-started/timezones.png" alt="alt text" title="Часовые пояса" /></p>
+</li>
+<li>
+<p>Выберите каналы уведомлений, по которым сервис сообщит вам, выполнилась задача или нет.</p>
+<p><img src="/images/getting-started/notification-channels.png" alt="alt text" title="Каналы уведомлений" /></p>
+</li>
+</ol>
+<h2 id="kak-ukazat-usloviia-dlia-otpravki-uvedomlenii">Как указать условия для отправки уведомлений</h2>
+<p>На скриншоте указано условие <em>«Задача не запустилась спустя 5 минут»</em>. Это всего лишь пример.
+В реальности ваша задача может выполняться полчаса или более. Поэтому укажите время с запасом.</p>
+<h2 id="esli-zadacha-vypolnialas-dol-she-obychnogo">Если задача выполнялась дольше обычного</h2>
+<p>Допустим, вы знаете, что скрипт для резервного копирования сайта выполняется в течение часа.
+По каким-то причинам задача стала выполняться на полчаса дольше.</p>
+<p>Чтобы отследить задачу, которая выполнялась дольше, чем ожидалось, вы можете задать реакцию сервиса.</p>
+<p>Например, вот так:</p>
+<p><img src="/images/getting-started/too-long-execution.png" alt="alt text" title="Задача должна выполняться не более одного часа" /></p>
+<p>С такой настройкой сервис уведомит вас, если задача завершится спустя 46 минут и в пределах часа.</p>
+
+
+            </div>
+        </div>
+
+        <div class="prev-link">
+            
+    
+    
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+                
+                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;intro&#x2F;"><</a>
+                
+                
+                
+            
+        
+    
+
+        </div>
+
+        <div class="next-link">
+            
+    
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+                
+            
+        
+            
+            
+                <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;">></a>
+                
+                
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+        
+    
+
+        </div>
+    </div>
+</body>
+</html>
