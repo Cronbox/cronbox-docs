@@ -19,7 +19,7 @@ build_search_index = true
 theme="tinydocs"
 
 [extra]
-keywords = "Документация, мониторинг для разработчиков, мониторинг"
+keywords = "мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron"
 
 # Put all your custom variables here
 blog = "https://blog.cronbox.ru"
