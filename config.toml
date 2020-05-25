@@ -26,6 +26,8 @@ blog = "https://blog.cronbox.ru"
 panel = "https://cp.cronbox.ru"
 docs = "https://docs.cronbox.ru"
 
+site_url = "https://cronbox.ru"
+
 documentation_for = "Cronbox"
 
 favicon_type = "image/x-icon"
