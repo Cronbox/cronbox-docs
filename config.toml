@@ -36,3 +36,9 @@ open_graph_url = "https://docs.cronbox.ru"
 open_graph_type = "article"
 open_graph_title = "Cronbox"
 open_graph_image = ""
+
+# YANDEX
+
+yandex_webmaster_verification_code = "7e31b2e5536fb5d8"
+
+yandex_metrika_counter = "64369606"
