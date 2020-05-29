@@ -24,9 +24,7 @@ sort_by = "weight"
 
 1. Написать что-нибудь боту (`@Cronbox_Bot`).
 
-2. Ввести имя пользователя в Telegram в форме:
-
-![alt text](/images/integration/telegram_form.png "Форма интеграции с Telegram")
+2. Ввести имя пользователя в Telegram в форме.
 
 3. Нажать «Подключить».
 
