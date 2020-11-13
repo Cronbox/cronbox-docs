@@ -3,6 +3,7 @@
     
         <url>
             <loc>https://docs.cronbox.ru/</loc>
+            <lastmod>2020-11-13</lastmod>
             
         </url>
     
@@ -13,11 +14,7 @@
     
         <url>
             <loc>https://docs.cronbox.ru/how-to-ping/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://docs.cronbox.ru/integrations/</loc>
+            <lastmod>2020-11-13</lastmod>
             
         </url>
     
@@ -29,6 +26,11 @@
         <url>
             <loc>https://docs.cronbox.ru/monitor-states-and-alerts/</loc>
             
+        </url>
+    
+        <url>
+            <loc>https://docs.cronbox.ru/notification-channels/</loc>
+            <lastmod>2020-11-13</lastmod>
         </url>
     
 </urlset>
