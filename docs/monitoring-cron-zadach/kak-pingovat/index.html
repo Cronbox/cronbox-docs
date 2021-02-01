@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
     <title>
-Как пинговать | Cronbox
+Как отправить отклик от задачи из cron | Cronbox
 </title>
 
     <link rel="canonical" href="https:&#x2F;&#x2F;docs.cronbox.ru">
 
     
-<meta name="Description" content="Как пропинговать монитор разными способами">
+<meta name="Description" content="Несколько способов отправки отклика от задачи из cron">
 
 
     
 
-<meta name="keywords" content="мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron">
+    <meta name="keywords" content="мониторинг cron, мониторинг задач, мониторинг резервного копирования, мониторинг бэкапов, cron">
 
 
 
@@ -28,11 +28,11 @@
     
 
     
-<meta property="og:description" content="Как пропинговать монитор разными способами"/>
+<meta property="og:description" content="Несколько способов отправки отклика от задачи из cron"/>
 
 
     
-<meta property="og:url" content="/how-to-ping&#x2F;" />
+<meta property="og:url" content="/&#x2F;monitoring-cron-zadach&#x2F;kak-pingovat&#x2F;" />
 
 
     
@@ -117,12 +117,12 @@
                         
                         <li>
                             
-                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;how-to-ping&#x2F;"
-                               class="active"
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-saitov&#x2F;"
                                
+                               class="font-weight-bold"
                             >
                                 <strong>3.</strong>
-                                Как пинговать
+                                Мониторинг сайтов
                             </a>
                             
                         </li>
@@ -130,13 +130,31 @@
                         
                         <li>
                             
-                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;"
+                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;"
                                
                                class="font-weight-bold"
                             >
                                 <strong>4.</strong>
-                                Состояния монитора и уведомления
+                                Мониторинг задач cron
                             </a>
+                            
+                                <ul>
+                                    
+                                        <li class="active">
+                                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;kak-pingovat&#x2F;">
+                                                <strong>4.1.</strong>
+                                                Как отправить отклик от задачи из cron
+                                            </a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;states-and-notifications&#x2F;">
+                                                <strong>4.2.</strong>
+                                                Состояния монитора и уведомления
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
                             
                         </li>
                     
@@ -161,52 +179,45 @@
     </div>
 
     <div class="page">
-        <div class="page__header">
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
 
         <div class="page__content">
             <div class="book-content">
                 
-    <h1>Как пинговать</h1>
-    <p>Чтобы интегрироваться с мониторингом от Cronbox, необходимо, чтобы ваша задача
-отправляла отклик (ping-запрос) на уникальную ссылку. С помощью ping-запроса мы поймём, что задача выполнилась и в какое время. </p>
+    <h1 class="page-title">Как отправить отклик от задачи из cron</h1>
+    <p>Чтобы сервис узнал в какое время выполнилась задача и выполнилась ли вообще, необходимо, чтобы ваша задача
+отправляла отклик (HTTP-запрос) на уникальную ссылку монитора.</p>
 <p>Далее — примеры.</p>
 <h2 id="crontab">Crontab</h2>
 <p>С помощью утилиты <code>curl</code>:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#bf616a;">* </span><span style="color:#c0c5ce;">* * * * some-user /backup/script.sh &amp;&amp; </span><span style="color:#bf616a;">curl -fsS --retry</span><span style="color:#c0c5ce;"> 3 https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051 </span><span style="color:#c0c5ce;">
-</span></pre>
-<p>Планировщик задач cron запустит ваш скрипт <code>/backup/script.sh</code> и, если всё прошло успешно, попытается отправить 
-GET-запрос по уникальной ссылке для монитора. Если выполнение вашего скрипта не состоится или 
-завершится с ошибкой (результат не равен нулю), ping-запрос не будет отправлен монитору, а мы уведомим вас о том, 
+<code class="language-bash" data-lang="bash"><span style="color:#bf616a;">* </span><span style="color:#c0c5ce;">* * * * some-user /backup/script.sh &amp;&amp; </span><span style="color:#bf616a;">curl -fsS --retry</span><span style="color:#c0c5ce;"> 3 https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051 
+</span></code></pre>
+<p>Планировщик задач cron запустит ваш скрипт <code>/backup/script.sh</code> и, если всё прошло успешно, попытается отправить
+GET-запрос по уникальной ссылке для монитора. Если выполнение вашего скрипта не состоится или
+завершится с ошибкой (результат не равен нулю), ping-запрос не будет отправлен монитору, а мы уведомим вас о том,
 что задача не выполнилась по расписанию.</p>
 <h2 id="planirovshchik-zadach-windows">Планировщик задач Windows</h2>
-<p>Вы можете <a href="https://blog.cronbox.ru/kak-monitorit-zadazhi-v-windows/">мониторить задачи из планировщика Windows</a>.</p>
+<p>Вы можете <a href="https://blog.cronbox.ru/kak-monitorit-zadazhi-v-windows/">мониторить задачи из планировщика задач Windows</a>.</p>
 <h2 id="integratsiia-iz-vashego-prilozheniia">Интеграция из вашего приложения</h2>
-<p>Вы можете отправлять ping-запросы прямо из вашего приложения или скрипта. Ниже — примеры
+<p>Вы можете отправить отклик от задачи прямо из вашего приложения или скрипта. Ниже — примеры
 на популярных языках.</p>
 <h3 id="php">PHP</h3>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">file_get_contents(&quot;https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051&quot;);</span><span style="color:#c0c5ce;">
-</span></pre><h3 id="python">Python</h3>
+<code class="language-php" data-lang="php"><span style="color:#c0c5ce;">file_get_contents(&quot;https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051&quot;);
+</span></code></pre><h3 id="python">Python</h3>
 <pre style="background-color:#2b303b;">
-<span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">urllib2</span><span style="color:#c0c5ce;">
-</span><span style="color:#c0c5ce;">
-</span><span style="color:#b48ead;">try</span><span style="color:#c0c5ce;">:</span><span style="color:#c0c5ce;">
-  urllib2.</span><span style="color:#bf616a;">urlopen</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;)</span><span style="color:#c0c5ce;">
-</span><span style="color:#b48ead;">except </span><span style="color:#c0c5ce;">Exception:</span><span style="color:#c0c5ce;">
-  </span><span style="color:#b48ead;">pass</span><span style="color:#c0c5ce;">
-</span></pre><h3 id="node">Node</h3>
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">urllib2
+
+</span><span style="color:#b48ead;">try</span><span style="color:#c0c5ce;">:
+  urllib2.</span><span style="color:#bf616a;">urlopen</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;)
+</span><span style="color:#b48ead;">except </span><span style="color:#c0c5ce;">Exception:
+  </span><span style="color:#b48ead;">pass
+</span></code></pre><h3 id="node">Node</h3>
 <pre style="background-color:#2b303b;">
-<span style="color:#b48ead;">var </span><span style="color:#c0c5ce;">https = </span><span style="color:#bf616a;">require</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">https</span><span style="color:#c0c5ce;">&#39;);</span><span style="color:#c0c5ce;">
-</span><span style="color:#c0c5ce;">
-https.</span><span style="color:#bf616a;">get</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;);</span><span style="color:#c0c5ce;">
-</span></pre>
+<code class="language-javascript" data-lang="javascript"><span style="color:#b48ead;">var </span><span style="color:#bf616a;">https </span><span style="color:#c0c5ce;">= </span><span style="color:#96b5b4;">require</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">https</span><span style="color:#c0c5ce;">&#39;);
+
+</span><span style="color:#bf616a;">https</span><span style="color:#c0c5ce;">.</span><span style="color:#96b5b4;">get</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;);
+</span></code></pre>
 
             </div>
         </div>
@@ -214,39 +225,9 @@ https.</span><span style="color:#bf616a;">get</span><span style="color:#c0c5ce;"
         <div class="prev-link">
             
     
-    
-    
-    
         
         
-            
-        
-    
-        
-        
-            
-        
-    
-        
-        
-            
-        
-    
-        
-        
-            
-                
-                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;getting-started&#x2F;"><</a>
-                
-                
-                
-            
-        
-    
-        
-        
-            
-        
+        <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;"><</a>
     
 
         </div>
@@ -254,36 +235,7 @@ https.</span><span style="color:#bf616a;">get</span><span style="color:#c0c5ce;"
         <div class="next-link">
             
     
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-        
-            
-            
-            
-                
-            
-        
-            
-            
-                <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitor-states-and-alerts&#x2F;">></a>
-                
-                
-            
-            
-        
-            
-            
-            
-        
+        <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;states-and-notifications&#x2F;">></a>
     
 
         </div>

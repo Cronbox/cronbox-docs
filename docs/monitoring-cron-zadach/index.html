@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
     <title>
-С чего начать | Cronbox
+Мониторинг задач cron | Cronbox
 </title>
 
     <link rel="canonical" href="https:&#x2F;&#x2F;docs.cronbox.ru">
 
     
-<meta name="Description" content="Как быстро включить мониторинг для задач">
+<meta name="Description" content="Как настроить мониторинг cron">
 
 
     
@@ -28,11 +28,11 @@
     
 
     
-<meta property="og:description" content="Как быстро включить мониторинг для задач"/>
+<meta property="og:description" content="Как настроить мониторинг cron"/>
 
 
     
-<meta property="og:url" content="/&#x2F;getting-started&#x2F;" />
+<meta property="og:url" content="/&#x2F;monitoring-cron-zadach&#x2F;" />
 
 
     
@@ -105,8 +105,8 @@
                         <li>
                             
                             <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;getting-started&#x2F;"
-                               class="active"
                                
+                               class="font-weight-bold"
                             >
                                 <strong>2.</strong>
                                 С чего начать
@@ -131,8 +131,8 @@
                         <li>
                             
                             <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;"
+                               class="active"
                                
-                               class="font-weight-bold"
                             >
                                 <strong>4.</strong>
                                 Мониторинг задач cron
@@ -183,14 +183,51 @@
         <div class="page__content">
             <div class="book-content">
                 
-    <h1>С чего начать</h1>
-    <p>После того как вы <a href="https://cp.cronbox.ru/register">зарегистрировались</a> и <a href="https://cp.cronbox.ru/login">вошли</a> под своей учётной записью, необходимо создать монитор:</p>
-<p>Нажмите «Добавить» и выберите тип монитора, который вам необходим:</p>
-<p><img src="/images/monitoring/new-monitor-wizard.png" alt="Создание монитора для сайта или задачи" title="Создание монитора" /></p>
+    <h1>Мониторинг задач cron</h1>
+    <p>Чтобы мониторить задачу в cron, необходимо создать монитор.</p>
 <ol>
-<li><a href="/monitoring-saitov/">Мониторинг сайта или ссылки</a></li>
-<li><a href="/monitoring-cron-zadach/">Мониторинг задачи</a></li>
+<li>
+<p>Нажмите «Добавить» и выберите тип монитора «Задача»:<br />
+<img src="/images/monitoring/new-monitor-wizard.png" alt="Создание монитора для задачи cron" title="Создание нового монитора для задачи cron" />:</p>
+</li>
+<li>
+<p>Заполните поля формы для нового монитора:<br />
+<img src="/images/monitoring/new-job-monitor.png" alt="Создание монитора для задачи в cron" title="Форма создания нового монитора для задачи cron" /></p>
+</li>
+<li>
+<p>Выберите каналы уведомлений, по которым сервис сообщит вам, выполнилась задача или нет.</p>
+<p><img src="/images/getting-started/notification-channels.png" alt="Каналы уведомлений" title="Каналы уведомлений" /></p>
+</li>
+<li>
+<p>Зайдите на страницу созданного монитора и получите уникальную ссылку для отправки отклика:
+<img src="/images/monitoring/job-monitor-url.png" alt="Уникальная ссылка монитора" title="Уникальная ссылка монитора" /></p>
+</li>
+<li>
+<p>Добавьте к задаче <a href="/monitoring-cron-zadach/kak-pingovat/">отправку отклика</a>.</p>
+</li>
 </ol>
+<h2 id="kak-ukazat-usloviia-dlia-otpravki-uvedomlenii">Как указать условия для отправки уведомлений</h2>
+<p>На скриншоте указано условие «Задача не запустилась спустя 30 минут». Это всего лишь пример.
+В реальности ваша задача может выполняться полчаса или более. Поэтому укажите время с запасом.</p>
+<h2 id="esli-zadacha-vypolnialas-dol-she-obychnogo">Если задача выполнялась дольше обычного</h2>
+<p>Допустим, вы знаете, что скрипт для резервного копирования сайта выполняется в течение часа.
+По каким-то причинам задача стала выполняться на полчаса дольше.</p>
+<p>Чтобы отследить задачу, которая выполнялась дольше, чем ожидалось, вы можете задать реакцию сервиса. Например, вот так:</p>
+<p><img src="/images/getting-started/too-long-execution.png" alt="Условия для отправки уведомлений" title="Задача должна выполняться не более одного часа" /></p>
+<p>С такой настройкой сервис уведомит вас, если задача завершится спустя 46 минут и в пределах часа.</p>
+<h2 id="zachem-nuzhna-spetsial-naia-ssylka-dlia-monitora-zadachi">Зачем нужна специальная ссылка для монитора задачи</h2>
+<p>После создания нового монитора для задачи сервис генерирует уникальную ссылку для отправки
+ping-запросов. Пример ссылки:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">https://cronbox.ru/ping/3f5e3710-054c-23e8-b581-948935728a31
+</span></code></pre>
+<p>Монитор ожидает отклика от задачи, согласно указанному расписанию.
+Вам достаточно добавить отправку HTTP-запроса после выполнения задачи на эту ссылку.</p>
+<p>После отправки первого HTTP-запроса монитор начнёт своё наблюдение за задачей. До этого
+он будет находиться в режиме паузы.</p>
+<p>Расписание вашей задачи и монитора должны совпадать.</p>
+<p>Например, если у вас есть задача «Резервное копирование сайта» с расписанием запуска каждый день в час ночи,
+то и у монитора должно быть аналогичное расписание.</p>
 
 
             </div>
@@ -215,21 +252,21 @@
         
         
             
-        
-    
-        
-        
+                
+                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-saitov&#x2F;"><</a>
+                
+                
+                
             
         
     
         
         
             
-                
-                    <a class="previous" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;intro&#x2F;"><</a>
-                
-                
-                
+        
+    
+        
+        
             
         
     
@@ -240,35 +277,7 @@
             
     
         
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-                
-            
-        
-            
-            
-                <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-saitov&#x2F;">></a>
-                
-                
-            
-            
-        
-            
-            
-            
-        
-            
-            
-            
-        
+        <a class="next" href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;kak-pingovat&#x2F;">></a>
     
 
         </div>
