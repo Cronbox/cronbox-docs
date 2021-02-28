@@ -150,7 +150,7 @@
                                         <li >
                                             <a href="https:&#x2F;&#x2F;docs.cronbox.ru&#x2F;monitoring-cron-zadach&#x2F;states-and-notifications&#x2F;">
                                                 <strong>4.2.</strong>
-                                                Состояния монитора и уведомления
+                                                Состояния монитора и рассылка уведомлений
                                             </a>
                                         </li>
                                     
@@ -184,13 +184,13 @@
             <div class="book-content">
                 
     <h1 class="page-title">Как отправить отклик от задачи из cron</h1>
-    <p>Чтобы сервис узнал в какое время выполнилась задача и выполнилась ли вообще, необходимо, чтобы ваша задача
+    <p>Чтобы сервис узнал, в какое время выполнилась задача и выполнилась ли вообще, необходимо, чтобы ваша задача
 отправляла отклик (HTTP-запрос) на уникальную ссылку монитора.</p>
 <p>Далее — примеры.</p>
 <h2 id="crontab">Crontab</h2>
 <p>С помощью утилиты <code>curl</code>:</p>
 <pre style="background-color:#2b303b;">
-<code class="language-bash" data-lang="bash"><span style="color:#bf616a;">* </span><span style="color:#c0c5ce;">* * * * some-user /backup/script.sh &amp;&amp; </span><span style="color:#bf616a;">curl -fsS --retry</span><span style="color:#c0c5ce;"> 3 https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051 
+<code class="language-bash" data-lang="bash"><span style="color:#bf616a;">* </span><span style="color:#c0c5ce;">* * * * some-user /backup/script.sh &amp;&amp; </span><span style="color:#bf616a;">curl -fsS --retry</span><span style="color:#c0c5ce;"> 3 https://p.cronbox.ru/p/96a12a10-f126-82ff-5311-348a98e6d051 
 </span></code></pre>
 <p>Планировщик задач cron запустит ваш скрипт <code>/backup/script.sh</code> и, если всё прошло успешно, попытается отправить
 GET-запрос по уникальной ссылке для монитора. Если выполнение вашего скрипта не состоится или
@@ -203,20 +203,20 @@ GET-запрос по уникальной ссылке для монитора.
 на популярных языках.</p>
 <h3 id="php">PHP</h3>
 <pre style="background-color:#2b303b;">
-<code class="language-php" data-lang="php"><span style="color:#c0c5ce;">file_get_contents(&quot;https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051&quot;);
+<code class="language-php" data-lang="php"><span style="color:#c0c5ce;">file_get_contents(&quot;https://p.cronbox.ru/p/96a12a10-f126-82ff-5311-348a98e6d051&quot;);
 </span></code></pre><h3 id="python">Python</h3>
 <pre style="background-color:#2b303b;">
 <code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">urllib2
 
 </span><span style="color:#b48ead;">try</span><span style="color:#c0c5ce;">:
-  urllib2.</span><span style="color:#bf616a;">urlopen</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;)
+  urllib2.</span><span style="color:#bf616a;">urlopen</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://p.cronbox.ru/p/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;)
 </span><span style="color:#b48ead;">except </span><span style="color:#c0c5ce;">Exception:
   </span><span style="color:#b48ead;">pass
 </span></code></pre><h3 id="node">Node</h3>
 <pre style="background-color:#2b303b;">
 <code class="language-javascript" data-lang="javascript"><span style="color:#b48ead;">var </span><span style="color:#bf616a;">https </span><span style="color:#c0c5ce;">= </span><span style="color:#96b5b4;">require</span><span style="color:#c0c5ce;">(&#39;</span><span style="color:#a3be8c;">https</span><span style="color:#c0c5ce;">&#39;);
 
-</span><span style="color:#bf616a;">https</span><span style="color:#c0c5ce;">.</span><span style="color:#96b5b4;">get</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://cronbox.ru/ping/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;);
+</span><span style="color:#bf616a;">https</span><span style="color:#c0c5ce;">.</span><span style="color:#96b5b4;">get</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">https://p.cronbox.ru/p/96a12a10-f126-82ff-5311-348a98e6d051</span><span style="color:#c0c5ce;">&quot;);
 </span></code></pre>
 
             </div>
